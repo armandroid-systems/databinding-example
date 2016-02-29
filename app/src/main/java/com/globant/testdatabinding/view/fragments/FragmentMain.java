@@ -10,6 +10,7 @@ import android.view.ViewGroup;
  * Created by zadtankus on 28/02/16.
  */
 public class FragmentMain extends BaseFragment {
+    private static final String TAG = FragmentMain.class.getSimpleName();
 
     @Nullable
     @Override
