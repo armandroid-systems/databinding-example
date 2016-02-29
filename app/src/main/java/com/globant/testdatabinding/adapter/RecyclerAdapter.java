@@ -40,4 +40,13 @@ public class RecyclerAdapter  extends RecyclerView.Adapter<ItemViewHolder>{
     public int getItemCount() {
         return null != arrayUser?arrayUser.size():0;
     }
+
+    public List<User> getArrayUser() {
+        return arrayUser;
+    }
+
+    public void addItem(User user){
+        arrayUser.add(user);
+        notifyDataSetChanged();
+    }
 }
