@@ -62,27 +62,6 @@ public class FormViewModel extends BaseObservable {
     public User setUser(){
         return new User(name,phone, email);
     }
-
-    public TextWatcher getFieldWatcher(){
-        return new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                name = s.toString();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-
-            }
-        };
-    }
-
     public EditText.OnFocusChangeListener getFocusListener(){
         return new EditText.OnFocusChangeListener() {
             @Override
