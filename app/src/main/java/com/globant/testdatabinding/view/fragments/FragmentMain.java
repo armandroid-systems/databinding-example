@@ -32,7 +32,7 @@ public class FragmentMain extends BaseFragment {
         fragmentBinding.setForm(mViewModel);
 
         fragmentBinding.contacts.setLayoutManager(new LinearLayoutManager(getContext()));
-        fragmentBinding.contacts.setAdapter(mViewModel.getmAdapter());
+       // fragmentBinding.contacts.setAdapter(mViewModel.getmAdapter());
 
         return fragmentMain;
     }

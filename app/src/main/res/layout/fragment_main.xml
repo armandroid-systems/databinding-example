@@ -60,7 +60,9 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/contacts"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:visibility="@{age &lt; 13 ? View.GONE : View.VISIBLE}"
+                app:setAdapter="@{form.getmAdapter}"/>
 
         </LinearLayout>
 
