@@ -9,65 +9,108 @@
             type="com.globant.testdatabinding.viewmodel.FormViewModel"/>
 
     </data>
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:id="@+id/form"
-            android:layout_weight="1">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@{form.name}"
-                android:id="@+id/editTextName"
-                app:error="@{form.getError}"
-                app:onFocusChangeListener="@{form.getFocusListener}"
-                app:binding="@{form}"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@{form.phone}"
-                app:error="@{form.getError}"
-                android:id="@+id/editTextPhone"
-                app:binding="@{form}"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@{form.email}"
-                app:error="@{form.getError}"
-                app:binding="@{form}"
-                app:onFocusChangeListener="@{form.getFocusListener}"
-                android:id="@+id/editTextMail" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Button"
-                android:onClick="@{form.onClickButton}"
-                android:id="@+id/buttonSend" />
-        </LinearLayout>
-
-        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/list"
-            android:layout_weight="1">
+            android:layout_height="match_parent">
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/contacts"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:setAdapter="@{form.getmAdapter}"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/form"
+                android:layout_weight="1">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Name"
+                                android:text="@{form.name}"
+                                android:id="@+id/editTextName"
+                                app:error="@{form.getError}"
+                                app:onFocusChangeListener="@{form.getFocusListener}"
+                                app:binding="@{form}"/>
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Phone"
+                                android:text="@{form.phone}"
+                                app:error="@{form.getError}"
+                                android:id="@+id/editTextPhone"
+                                app:binding="@{form}"/>
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Email"
+                                android:text="@{form.email}"
+                                app:error="@{form.getError}"
+                                app:binding="@{form}"
+                                app:onFocusChangeListener="@{form.getFocusListener}"
+                                android:id="@+id/editTextMail" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="New Button"
+                            android:onClick="@{form.onClickButton}"
+                            android:id="@+id/buttonSend" />
+
+                    </LinearLayout>
+
+
+                </ScrollView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/list"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/contacts"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:setAdapter="@{form.getmAdapter}"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 </layout>
